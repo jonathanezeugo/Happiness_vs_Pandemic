@@ -3,11 +3,11 @@ import numpy as np
 import datetime as dt
 import sqlalchemy
 from sqlalchemy import create_engine
-# from secrets import username, password
+from secrets import username, password
 
 
 
-engine = create_engine('postgresql://postgres:Red72todaywood!@localhost:5432/Happiness_db')
+engine = create_engine('postgresql://postgres:{password}@localhost:5432/Happiness_db')
 conn=engine.connect()
 
 govt_list = pd.read_sql_query("SELECT * FROM un_govt",conn)
