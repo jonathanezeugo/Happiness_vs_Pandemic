@@ -86,8 +86,8 @@ def happiness_vs_covid():
     for result in results:
         covid_happiness={}
         covid_happiness["country"] = result[0]
-        covid_happiness["sum of new deaths"] = result[1]
-        covid_happiness["happiness_score"] = result[2]
+        covid_happiness["happiness_score"] = result[1]
+        covid_happiness["sum of new deaths"] = result[2]
 
         happiness_vs_covid.append(covid_happiness)
 
