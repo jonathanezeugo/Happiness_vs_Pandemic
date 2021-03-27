@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import datetime as dt
 import sqlalchemy
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
@@ -89,10 +89,11 @@ def happiness_vs_covid():
         covid_happiness={}
         covid_happiness["country"] = result[0]
         covid_happiness["happiness_score"] = result[1]
-        covid_happiness["sum_new_deaths"] = result[2]
-        covid_happiness["sum_new_cases"] = result[3]
-        covid_happiness["latitude"] = result[4]
-        covid_happiness["longitude"] = result[5]
+        covid_happiness["latitude"] = result[2]
+        covid_happiness["longitude"] = result[3]
+        covid_happiness["total_new_deaths"] = result[4]
+        covid_happiness["total_new_cases"] = result[5]
+
 
         happiness_vs_covid.append(covid_happiness)
 
