@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "hello world"
+    return render_template("index.html")
 
 @app.route("/countries")
 def countries():
@@ -57,7 +57,7 @@ def country_demographic(country):
     join world_happiness as w
     on (u.id=w.country_id) where u.country= '{country}'""").fetchall()
 
-    demographics=[]
+
     for result in results:
         country_data={}
         country_data["id"] = result[0]
@@ -67,9 +67,9 @@ def country_demographic(country):
         country_data["world_region"] = result[4]
         country_data["gdp"] = result[5]
         
-        demographics.append(country_data)
 
-    return jsonify(demographics)
+
+    return jsonify(country_data)
     
 
 
@@ -98,8 +98,7 @@ def happiness_vs_covid():
         happiness_vs_covid.append(covid_happiness)
 
     return jsonify(happiness_vs_covid)
-    happiness_vs_covid.to_json('static/js/happiness_vs_covid.json')
-
+   
 @app.route("/government_response/<country>")
 def government_response(country):
     results = engine.execute(f"""select u.id, u.country, r.gov_resp_date,r.gov_resp_type,r.gov_resp_link_src
@@ -122,8 +121,7 @@ def government_response(country):
         government_response.append(country_resp)
 
     return jsonify(government_response)
-    government_response.to_json('static/js/government_response.json')
-
+    
 
 
 
