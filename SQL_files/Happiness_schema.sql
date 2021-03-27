@@ -57,12 +57,4 @@ CREATE TABLE world_covid_data (
 	covid_times_life_expectancy INT
 );
 
--- Select * from world_happiness;
 
--- select un_govt.id from un_govt;
-
--- Alter table world_happiness add column year INT;
-
--- Select * from world_happiness;
-
--- Update world_happiness set year = 2020;

@@ -14,9 +14,9 @@ from un_govt as u
 				
 				
 				
-select SUM(new_cases) as "total new cases" from world_covid_data
+select SUM(new_cases) as "total new cases" from world_covid_data,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
 
-select u.country, w.happiness_score, sum(c.new_deaths)as "sum of new deaths"
+select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
 from un_govt as u
 	inner join world_happiness as w
 		on (u.id=w.country_id)
@@ -25,7 +25,7 @@ from un_govt as u
 				group by u.id, w.happiness_score
 				order by u.country
 				
-select u.country, sum(c.new_deaths) as "sum of new deaths"
+select u.country, u.latitude, u.longitude, sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
 from un_govt as u
 	join world_covid_data as c
 	on (u.id=c.country_id)
