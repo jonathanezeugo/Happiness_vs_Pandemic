@@ -46,6 +46,7 @@ def demographics():
         demographics.append(country_data)
 
     return jsonify(demographics)
+    demographics.to_json('static/js/demographics.json')
 
 # grabbing one country at a time
 
@@ -69,6 +70,7 @@ def country_demographic(country):
         demographics.append(country_data)
 
     return jsonify(demographics)
+    
 
 
 @app.route("/happiness_vs_covid")
@@ -92,8 +94,31 @@ def happiness_vs_covid():
         happiness_vs_covid.append(covid_happiness)
 
     return jsonify(happiness_vs_covid)
+    happiness_vs_covid.to_json('static/js/happiness_vs_covid.json')
 
+@app.route("/government_response/<country>")
+def government_response(country):
+    results = engine.execute(f"""select u.id, u.country, r.gov_resp_date,r.gov_resp_type,r.gov_resp_link_src
+    from un_govt as u
+	join gov_response as r
+	on (u.id=r.country_id)
+    where u.country= '{country}'
+	group by u.id, r.gov_resp_date, r.gov_resp_type, r.gov_resp_link_src
+    order by r.gov_resp_date  """).fetchall()
 
+    government_response=[]
+    for result in results:
+        country_resp={}
+        country_resp["id"] = result[0]
+        country_resp["country"] = result[1]
+        country_resp["gov_resp_date"] = result[2]
+        country_resp["gov_resp_type"] = result[3]
+        country_resp["gov_resp_link_src"] = result[4]
+        
+        government_response.append(country_resp)
+
+    return jsonify(government_response)
+    government_response.to_json('static/js/government_response.json')
 
 
 

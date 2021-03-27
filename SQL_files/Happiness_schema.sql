@@ -10,6 +10,8 @@ DROP TABLE IF EXISTS un_govt ;
 CREATE TABLE un_govt (
 	id INT PRIMARY KEY ,
     country VARCHAR NOT NULL,
+	latitude FLOAT NOT NULL,
+	longitude FLOAT NOT NULL,
 	population_2020 INT NOT NULL,
     head_of_state VARCHAR NOT NULL,
 	constitutional_form VARCHAR NOT NULL,
