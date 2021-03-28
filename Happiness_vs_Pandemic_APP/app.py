@@ -6,8 +6,9 @@ from flask import Flask, jsonify, render_template, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
+from numpy.random import f
 
-engine = create_engine('postgresql://postgres:password@localhost:5432/Happiness_db')
+engine = create_engine('postgresql://postgres:Red72todaywood!@localhost:5432/Happiness_db')
 
 app = Flask(__name__)
 
