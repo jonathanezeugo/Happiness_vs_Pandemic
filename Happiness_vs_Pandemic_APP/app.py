@@ -1,3 +1,5 @@
+# Import Dependencies
+#-----------------------------------------------------
 import pandas as pd
 import numpy as np
 import datetime as dt
@@ -12,11 +14,14 @@ engine = create_engine('postgresql://postgres:Red72todaywood!@localhost:5432/Hap
 
 app = Flask(__name__)
 
-
+# App route to Home Page
+#-----------------------------------------------------
 @app.route("/")
 def home():
     return render_template("index.html")
 
+# App route countries
+#-----------------------------------------------------
 @app.route("/countries")
 def countries():
     results=engine.execute("SELECT country FROM un_govt").fetchall()
@@ -26,7 +31,8 @@ def countries():
     return jsonify(country)
 
 
-
+# App route to Home Page
+#-----------------------------------------------------
 @app.route("/demographics")
 def demographics():
     results=engine.execute("""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
@@ -47,9 +53,41 @@ def demographics():
         demographics.append(country_data)
 
     return jsonify(demographics)
-    demographics.to_json('static/js/demographics.json')
 
+# App route to map
+#-----------------------------------------------------
+
+@app.route("/map")
+def map():
+    results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
+    from un_govt as u
+	inner join world_happiness as w
+	on (u.id=w.country_id)
+	inner join world_covid_data as c
+	on (w.country_id = c.country_id)
+	group by u.id, w.happiness_score
+	order by u.country """).fetchall()
+    
+    happiness_vs_covid = []
+    for result in results:
+        covid_happiness={}
+        covid_happiness["country"] = result[0]
+        covid_happiness["happiness_score"] = result[1]
+        covid_happiness["latitude"] = result[2]
+        covid_happiness["longitude"] = result[3]
+        covid_happiness["total_new_deaths"] = result[4]
+        covid_happiness["total_new_cases"] = result[5]
+
+
+        happiness_vs_covid.append(covid_happiness)
+
+    return jsonify(happiness_vs_covid)
+    return render_template("map.html")
+
+
+# App route to demographics for one country at a time
 # grabbing one country at a time
+#-----------------------------------------------------
 
 @app.route("/demographics/<country>")
 def country_demographic(country):
@@ -72,7 +110,9 @@ def country_demographic(country):
 
     return jsonify(country_data)
     
-
+# App route to demographics for happiness vs covid data
+# grabbing one country at a time
+#-----------------------------------------------------
 
 @app.route("/happiness_vs_covid")
 def happiness_vs_covid():
@@ -99,7 +139,11 @@ def happiness_vs_covid():
         happiness_vs_covid.append(covid_happiness)
 
     return jsonify(happiness_vs_covid)
-   
+
+# App route to demographics for government response data
+# grabbing one country at a time
+#-----------------------------------------------------
+
 @app.route("/government_response/<country>")
 def government_response(country):
     results = engine.execute(f"""select u.id, u.country, r.gov_resp_date,r.gov_resp_type,r.gov_resp_link_src
