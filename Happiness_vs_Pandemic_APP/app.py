@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from numpy.random import f
 
-engine = create_engine('postgresql://postgres:Red72todaywood!@localhost:5432/Happiness_db')
+engine = create_engine('postgresql://postgres:password@localhost:5432/Happiness_db')
 
 app = Flask(__name__)
 
@@ -57,7 +57,7 @@ def demographics():
 # App route to map
 #-----------------------------------------------------
 
-@app.route("/map")
+@app.route("/map.html")
 def map():
     results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
     from un_govt as u
