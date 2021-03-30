@@ -10,19 +10,19 @@ from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from numpy.random import f
 
-engine = create_engine('postgresql://postgres:password@localhost:5432/Happiness_db')
+engine = create_engine('postgresql://postgres:Red72todaywood!@localhost:5432/Happiness_db')
 
-application = Flask(__name__)
+app = Flask(__name__)
 
 # App route to Home Page
 #-----------------------------------------------------
-@application.route("/")
+@app.route("/")
 def home():
     return render_template("index.html")
 
 # App route countries
 #-----------------------------------------------------
-@application.route("/countries")
+@app.route("/countries")
 def countries():
     results=engine.execute("SELECT country FROM un_govt").fetchall()
     country=[]
@@ -33,7 +33,7 @@ def countries():
 
 # App route to Home Page
 #-----------------------------------------------------
-@application.route("/demographics")
+@app.route("/demographics")
 def demographics():
     results=engine.execute("""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
     from un_govt as u
@@ -57,7 +57,7 @@ def demographics():
 # App route to map
 #-----------------------------------------------------
 
-@application.route("/map.html")
+@app.route("/map.html")
 def map():
     results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
     from un_govt as u
@@ -89,7 +89,7 @@ def map():
 # grabbing one country at a time
 #-----------------------------------------------------
 
-@application.route("/demographics/<country>")
+@app.route("/demographics/<country>")
 def country_demographic(country):
     results=engine.execute(f"""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
     from un_govt as u
@@ -114,7 +114,7 @@ def country_demographic(country):
 # grabbing one country at a time
 #-----------------------------------------------------
 
-@application.route("/happiness_vs_covid")
+@app.route("/happiness_vs_covid")
 def happiness_vs_covid():
     results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
     from un_govt as u
@@ -144,7 +144,7 @@ def happiness_vs_covid():
 # grabbing one country at a time
 #-----------------------------------------------------
 
-@application.route("/government_response/<country>")
+@app.route("/government_response/<country>")
 def government_response(country):
     results = engine.execute(f"""select u.id, u.country, r.gov_resp_date,r.gov_resp_type,r.gov_resp_link_src
     from un_govt as u
@@ -171,4 +171,4 @@ def government_response(country):
 
 
 if __name__ == '__main__':
-    application.run(debug=True)
+    app.run(debug=True)

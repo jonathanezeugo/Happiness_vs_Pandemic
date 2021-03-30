@@ -3,3 +3,63 @@ body,
 html {
     height: 100%;
 }
+/* Rectangle 1 */
+
+position: absolute;
+width: 630px;
+height: 1295px;
+
+background: #1C225E;
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 630px;
+height: 67px;
+
+background: url(smiley_face.jpg);
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 630px;
+height: 32px;
+
+background: #CFD307;
+
+
+/* Home | */
+
+position: absolute;
+width: 42px;
+height: 14px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 630px;
+height: 14px;
+
+background: #D68C1E;
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 461px;
+height: 273px;
+
+background: #C4C4C4;
