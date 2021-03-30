@@ -12,9 +12,20 @@
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
     <link rel="stylesheet" href="../static/css/style.css">
+    <!-- <style>
+        div {
+          background-image: url('../static/images/world.png');
+          background-repeat: no-repeat;
+        }
+        </style> -->
 </head>
 
 <body>
+    <div class="row">
+        <div style="background-image: url('../static/images/world.png');"class="col-12">
+            <!-- <img src="../static/images/world.png"alt="world" style="width:100%;" class="img-fluid"> -->
+        </div>
+    </div>
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -34,41 +45,29 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="map.html">World Map</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="cities.html">Data</a>
-                            </li> -->
-                            <!-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Plots
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="cloudiness.html">Cloudiness</a></li>
-                                    <li><a class="dropdown-item" href="humidity.html">Humidity</a></li>
-                                    <li><a class="dropdown-item" href="max_temp.html">Max Temperature</a></li>
-                                    <li><a class="dropdown-item" href="wind_speed.html">Wind Speed</a></li>
-                                </ul>
-                            </li> -->
                         </ul>
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav>N
     </div>
     <div class="wrapper">
         <div class="container-fluid ">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 ">
-                    <div id="Microbes">
-                        <img src="Happiness_vs_Pandemic/Happiness_vs_Pandemic_APP/static/images/smiley_face.jpg" alt="Smiley Face" style="width:100%;" class="img-fluid">
-                        <circle class="res-circle ">
-                            <p id="headerText">Happiness Covid</p>
-                            <p id="sub-header">Use the interactive charts below to explore the dataset</p>
-                        </circle>
+                <div class="col-lg-4 col-md-4 col-sm-4 ">
+                    <div>
+                        <img src="../static/images/smiley_face.jpg" alt="Smiley Face" style="width:100%;" class="img-fluid">
+                        <div>
+                            <h1 id="headerText">Happiness vs Pandemic</h1>
+                            <p id="paragraph1">Use the interactive charts below to explore the dataset. The dataset has many features the includes how our world 
+                                has reacted to Covid-19. How did countries who were considered as the "Happiest" fair in this year of Covid?
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <div class="row">
+                <div class="row" id="map-row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <div class="well">
                             <h5>Country Name:</h5>
@@ -90,7 +89,7 @@
                     <br>
                     <div class="col-lg-1 col-md-1 col-sm-1 "></div>
                     <div class="col-lg-10 col-md-10 col-sm-10">
-                        <div id="bubble"></div>
+                        <div id="bubble">Bubble Chart</div>
                     </div>
                     <div class="col-lg-1 col-md-1 col-sm-1"></div>
                 </div>
