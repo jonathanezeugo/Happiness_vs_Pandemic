@@ -112,7 +112,7 @@ def country_demographic(country):
     return jsonify(country_data)
     
 # App route to demographics for happiness vs covid data
-# grabbing one country at a time
+
 #-----------------------------------------------------
 
 @app.route("/happiness_vs_covid")
@@ -142,6 +142,35 @@ def happiness_vs_covid():
 
     return jsonify(happiness_vs_covid)
 
+# App route to demographics for happiness vs covid data
+# grabbing one country at a time
+#-----------------------------------------------------
+
+@app.route("/happiness_vs_covid_charts/<country>")
+def happiness_vs_covid_charts(country):
+    
+    results = engine.execute(f"""select u.id, u.country, w.new_cases, w.new_deaths, wh.happiness_score
+    from un_govt as u
+	inner join world_covid_data as w
+	on (u.id=w.country_id) inner join world_happiness as wh
+	on (w.country_id = wh.country_id) where u.country = '{country}' 
+	group by u.id, w.new_cases, w.new_deaths, wh.happiness_score
+	order by w.new_cases desc, w.new_deaths desc
+	limit 10; """).fetchall()
+    
+    hap_vs_covid_charts=[]
+    for result in results:
+        select_country={}
+        select_country["id"] = result[0]
+        select_country["country"] = result[1]
+        select_country["new_cases"] = result[2]
+        select_country["new_deaths"] = result[3]
+        select_country["happiness_score"] = result[4]
+        
+        hap_vs_covid_charts.append(select_country)
+    
+    return jsonify(results)
+    happiness_vs_covid.to_json('static/js/happiness_vs_covid.json')
 # App route to demographics for government response data
 # grabbing one country at a time
 #-----------------------------------------------------

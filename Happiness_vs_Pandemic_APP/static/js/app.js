@@ -1,5 +1,7 @@
 // Step 1 Populate Drop Down
 // Function to Collect names of countries names to Section tag with options using id selDataset 
+//--------------------------------------------
+//--------------------------------------------
 function init() {
     // Use a list of names from names
     d3.json("/countries").then((data) => {
@@ -21,6 +23,8 @@ function init() {
     });
 }
 // Step 2 Define option changed
+//--------------------------------------------
+//--------------------------------------------
 // Function to change data each time to update charts
 function optionChanged(country) {
     // Fetch new data each time a new sample is selected
@@ -30,6 +34,8 @@ function optionChanged(country) {
 init();
 
 // Step 3 Demographic
+//--------------------------------------------
+//--------------------------------------------
 function demographicInfo(country) {
     d3.json(`/demographics/${country}`).then((data) => {
 
@@ -42,9 +48,12 @@ function demographicInfo(country) {
     });
 }
 // STep 4 bubble chart
+//--------------------------------------------
+//--------------------------------------------
 
 // Step 5 map
-//
+//--------------------------------------------
+//--------------------------------------------
 d3.json("/happiness_vs_covid").then((happinessDataSample) => {
 
     
