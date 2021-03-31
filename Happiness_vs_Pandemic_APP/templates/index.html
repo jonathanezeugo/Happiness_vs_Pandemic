@@ -12,12 +12,7 @@
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
     <link rel="stylesheet" href="../static/css/style.css">
-    <!-- <style>
-        div {
-          background-image: url('../static/images/world.png');
-          background-repeat: no-repeat;
-        }
-        </style> -->
+
 </head>
 
 <body>
@@ -84,27 +79,21 @@
             </div>
             <div class="container">
                 <div class="row" id="map-row">
-                    <!-- <div class="col-lg-5 col-md-5 col-sm-5">
-                        <div class="well">
-                            <h5>Country Name:</h5>
-                            <select id="selDataset" onchange="optionChanged(this.value)">--Select--</select>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Demographic Info</h4>
-                            </div>
-                            <div id="sample-metadata" class="panel-body"></div>
-                        </div>
-                    </div> -->
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div id="map"></div>
+                        <div id="map">
+                            <!-- We append our map here. -->
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <br>
                     <div class="col-lg-1 col-md-1 col-sm-1 "></div>
                     <div class="col-lg-10 col-md-10 col-sm-10">
-                        <div id="bubble">Bubble Chart</div>
+                        <div id="bubble">
+                            <div id="scatter">
+                                <!-- We append our chart here. -->
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-1 col-md-1 col-sm-1"></div>
                 </div>
@@ -113,9 +102,12 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script src="../static/js/app.js"></script>
+        <script src="../static/js/bubbleapp.js"></script>
 
 </body>
 
