@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from numpy.random import f
 
-engine = create_engine('postgresql://postgres:password@localhost:5432/Happiness_db')
+engine = create_engine('postgresql://postgres:ricebootcamp@happinesscoviddb.cy7ekxurfwul.us-east-2.rds.amazonaws.com')
 
 app = Flask(__name__)
 
@@ -35,7 +35,7 @@ def countries():
 #-----------------------------------------------------
 @app.route("/demographics")
 def demographics():
-    results=engine.execute("""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
+    results=engine.execute("""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, 
     from un_govt as u
     join world_happiness as w
     on (u.id=w.country_id)""").fetchall()
@@ -43,12 +43,12 @@ def demographics():
 
     for result in results:
         country_data={}
-        country_data["id"] = result[0]
-        country_data["country_name"] = result[1]
-        country_data["type_of_government"] = result[2]
-        country_data["population"] = result[3]
-        country_data["world_region"] = result[4]
-        country_data["gdp"] = result[5]
+        country_data["ID: "] = result[0]
+        country_data["Country Name: "] = result[1]
+        country_data["Type of Government: "] = result[2]
+        country_data["Population: "] = result[3]
+        country_data["World Region: "] = result[4]
+
         
         demographics.append(country_data)
 
@@ -59,7 +59,7 @@ def demographics():
 
 @app.route("/map.html")
 def map():
-    results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
+    results = engine.execute("""select u.id,u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
     from un_govt as u
 	inner join world_happiness as w
 	on (u.id=w.country_id)
@@ -71,12 +71,13 @@ def map():
     happiness_vs_covid = []
     for result in results:
         covid_happiness={}
-        covid_happiness["country"] = result[0]
-        covid_happiness["happiness_score"] = result[1]
-        covid_happiness["latitude"] = result[2]
-        covid_happiness["longitude"] = result[3]
-        covid_happiness["total_new_deaths"] = result[4]
-        covid_happiness["total_new_cases"] = result[5]
+        covid_happiness["id"]= result[0]
+        covid_happiness["country"] = result[1]
+        covid_happiness["happiness_score"] = result[2]
+        covid_happiness["latitude"] = result[3]
+        covid_happiness["longitude"] = result[4]
+        covid_happiness["total_new_deaths"] = result[6]
+        covid_happiness["total_new_cases"] = result[6]
 
 
         happiness_vs_covid.append(covid_happiness)
@@ -91,7 +92,7 @@ def map():
 
 @app.route("/demographics/<country>")
 def country_demographic(country):
-    results=engine.execute(f"""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
+    results=engine.execute(f"""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region
     from un_govt as u
     join world_happiness as w
     on (u.id=w.country_id) where u.country= '{country}'""").fetchall()
@@ -99,12 +100,12 @@ def country_demographic(country):
 
     for result in results:
         country_data={}
-        country_data["id"] = result[0]
-        country_data["country_name"] = result[1]
-        country_data["type_of_government"] = result[2]
-        country_data["population"] = result[3]
-        country_data["world_region"] = result[4]
-        country_data["gdp"] = result[5]
+        country_data["ID"] = result[0]
+        country_data["Country Name"] = result[1]
+        country_data["Type of Government"] = result[2]
+        country_data["Population"] = result[3]
+        country_data["World Region"] = result[4]
+
         
 
 
@@ -116,7 +117,7 @@ def country_demographic(country):
 
 @app.route("/happiness_vs_covid")
 def happiness_vs_covid():
-    results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
+    results = engine.execute("""select u.country, u.population_2020, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
     from un_govt as u
 	inner join world_happiness as w
 	on (u.id=w.country_id)
@@ -129,11 +130,12 @@ def happiness_vs_covid():
     for result in results:
         covid_happiness={}
         covid_happiness["country"] = result[0]
-        covid_happiness["happiness_score"] = result[1]
-        covid_happiness["latitude"] = result[2]
-        covid_happiness["longitude"] = result[3]
-        covid_happiness["total_new_deaths"] = result[4]
-        covid_happiness["total_new_cases"] = result[5]
+        covid_happiness["population_2020"] = result[1]
+        covid_happiness["happiness_score"] = result[2]
+        covid_happiness["latitude"] = result[3]
+        covid_happiness["longitude"] = result[4]
+        covid_happiness["total_new_deaths"] = result[5]
+        covid_happiness["total_new_cases"] = result[6]
 
 
         happiness_vs_covid.append(covid_happiness)
