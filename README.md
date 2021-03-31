@@ -1,10 +1,10 @@
-#Project 2: Happiness vs Pandemic
+# Project 2: Happiness vs Pandemic
 
 ![](https://files.slack.com/files-pri/T01D5AMJJHX-F01T2972Z60/smiley-bg.png)
 
-##Members: Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
+## Members: Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
 
-##Links to Data Used:
+## Links to Data Used:
 
 [data/un_govt.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/un_govt.csv)
 
@@ -14,19 +14,19 @@
 
 [data/gov_response.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/a74fdc9c144068fa66067497a61e4fb087c35096/data/gov_response.csv)
 
-##Project Objective:
+## Project Objective:
 
 	Our project objective is to use a database containing Covid-19 data from different 
 	countries and demographic data for each of these countries to create a dashboard with 
 	interactive visualizations using PostgreSQL/pgAdmin4, Flask, AWS, Heroku, Javascript and HTML.
 	
 	
-##*Note about data:
+## *Note about data:
 	
-	All data used is through 2020 and does not represent current Covid-19 data as of March 31, 2021.
+	*All data used is through 2020 and does not represent current Covid-19 data as of March 31, 2021.
 
 
-##Breakdown of Interactive Visualizations:
+## Breakdown of Interactive Visualizations:
 
 	1. World Map: Our world map involves the relation of happiness scores and to number of deaths from Covid-19.
 	We've included data for 136 countries in the UN. In the top right corner is a selection menu where the user can 
@@ -48,23 +48,23 @@
 	
 ![Countries That Made the Cut](https://i.gyazo.com/d087eced613c645b3592952be3c6dc22.png)
 
-##Below is the full list of countries observed in the data:
+## Below is the full list of countries observed in the data:
 
-Afghanistan
-Albania
-Algeria
-Argentina
-Armenia
-Australia
-Austria
-Azerbaijan
-Bahrain
-Bangladesh
-Belarus
-Belgium
-Benin
-Bolivia
-Bosnia and Herzegovina
+Afghanistan,
+Albania,
+Algeria,
+Argentina,
+Armenia,
+Australia,
+Austria,
+Azerbaijan,
+Bahrain,
+Bangladesh,
+Belarus,
+Belgium,
+Benin,
+Bolivia,
+Bosnia and Herzegovina,
 Botswana
 Brazil
 Bulgaria
