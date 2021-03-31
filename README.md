@@ -16,13 +16,14 @@ Links to Data Used:
 
 Project Objective:
 
-	Our project objective is to use a database containing Covid-19 data from different countries and demographic data for each of these countries to create
-	a dashboard with interactive visualizations using PostgreSQL/pgAdmin4, Flask, AWS, Heroku, Javascript and HTML.
+	Our project objective is to use a database containing Covid-19 data from different 
+	countries and demographic data for each of these countries to create a dashboard with 
+	interactive visualizations using PostgreSQL/pgAdmin4, Flask, AWS, Heroku, Javascript and HTML.
 	
 	
 *Note about data:
 	
-	All data used is through 2020 and does not represent current numbers as of March 31, 2021.
+	All data used is through 2020 and does not represent current Covid-19 data as of March 31, 2021.
 
 
 Breakdown of Interactive Visualizations:
@@ -39,12 +40,13 @@ Breakdown of Interactive Visualizations:
 	about the selected country: country name/id, type of government, population (as of 2020), and the respective world region.
 	
 	3. Bubble Chart: The third interactive visualization is a bubble chart showing each country, along with their respective Covid-19 data.
-	The user can first choose between the 2 options below the chart: covid cases, and covid deaths. After clicking on one of these, the user can hover their
-	pointer over each circle to see the following data about the corresponding country: country name, happiness score, covid cases (as of 2020)
-	and covid deaths (as of 2020).
+	The user can first choose between the 2 options below the chart: covid cases, and covid deaths. After clicking on one of these,
+	the user can hover their pointer over each circle to see the following data about the corresponding country: country name,
+	happiness score, covid cases (as of 2020) and covid deaths (as of 2020).
 	
 	
 ![Countries That Made the Cut](https://i.gyazo.com/d087eced613c645b3592952be3c6dc22.png)
 
 Below is the full list of countries used in the data:
+
 
