@@ -1,6 +1,6 @@
 # Project 2: Happiness vs Pandemic
 
-![](https://files.slack.com/files-pri/T01D5AMJJHX-F01T2972Z60/smiley-bg.png)
+![smiley face](https://gyazo.com/bbe4ea726d4c1901854c9f001d4dc49c)
 
 ## Members: Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
 
@@ -65,125 +65,125 @@ Belgium,
 Benin,
 Bolivia,
 Bosnia and Herzegovina,
-Botswana
-Brazil
-Bulgaria
-Burkina Faso
-Burundi
-Cambodia
-Cameroon
-Canada
-Chad
-Chile
-China
-Colombia
-Democratic Republic of the Congo
-Costa Rica
-Croatia
-Cyprus
-Denmark
-Ecuador
-Egypt
-El Salvador
-Estonia
-Ethiopia
-Finland
-France
-Gabon
-Gambia
-Georgia
-Germany
-Ghana
-Greece
-Guatemala
-Guinea
-Haiti
-Honduras
-Hungary
-Iceland
-India
-Indonesia
-Iran
-Iraq
-Ireland
-Israel
-Italy
-Jamaica
-Japan
-Jordan
-Kazakhstan
-Kenya
-South Korea
-Kuwait
-Kyrgyzstan
-Laos
-Latvia
-Lebanon
-Lesotho
-Liberia
-Libya
-Lithuania
-Luxembourg
-Madagascar
-Malawi
-Malaysia
-Maldives
-Mali
-Malta
-Mauritania
-Mauritius
-Mexico
-Moldova
-Mongolia
-Montenegro
-Morocco
-Mozambique
-Myanmar
-Namibia
-Nepal
-Netherlands
-New Zealand
-Nicaragua
-Niger
-Nigeria
-Norway
-Pakistan
-Panama
-Paraguay
-Peru
-Philippines
-Poland
-Portugal
-Romania
-Russia
-Rwanda
-Saudi Arabia
-Senegal
-Sierra Leone
-Singapore
-Slovakia
-Slovenia
-Spain
-Sri Lanka
-Sweden
-Switzerland
-Tajikistan
-Tanzania
-Thailand
-Togo
-Trinidad and Tobago
-Tunisia
-Turkey
-Uganda
-Ukraine
-United Arab Emirates
-United Kingdom
-United States
-Uruguay
-Uzbekistan
-Venezuela
-Vietnam
-Yemen
-Zambia
+Botswana,
+Brazil,
+Bulgaria,
+Burkina Faso,
+Burundi,
+Cambodia,
+Cameroon,
+Canada,
+Chad,
+Chile,
+China,
+Colombia,
+Democratic Republic of the Congo,
+Costa Rica,
+Croatia,
+Cyprus,
+Denmark,
+Ecuador,
+Egypt,
+El Salvador,
+Estonia,
+Ethiopia,
+Finland,
+France,
+Gabon,
+Gambia,
+Georgia,
+Germany,
+Ghana,
+Greece,
+Guatemala,
+Guinea,
+Haiti,
+Honduras,
+Hungary,
+Iceland,
+India,
+Indonesia,
+Iran,
+Iraq,
+Ireland,
+Israel,
+Italy,
+Jamaica,
+Japan,
+Jordan,
+Kazakhstan,
+Kenya,
+Kuwait,
+Kyrgyzstan,
+Laos,
+Latvia,
+Lebanon,
+Lesotho,
+Liberia,
+Libya,
+Lithuania,
+Luxembourg,
+Madagascar,
+Malawi,
+Malaysia,
+Maldives,
+Mali,
+Malta,
+Mauritania,
+Mauritius,
+Mexico,
+Moldova,
+Mongolia,
+Montenegro,
+Morocco,
+Mozambique,
+Myanmar,
+Namibia,
+Nepal,
+Netherlands,
+New Zealand,
+Nicaragua,
+Niger,
+Nigeria,
+Norway,
+Pakistan,
+Panama,
+Paraguay,
+Peru,
+Philippines,
+Poland,
+Portugal,
+Romania,
+Russia,
+Rwanda,
+Saudi Arabia,
+Senegal,
+Sierra Leone,
+Singapore,
+Slovakia,
+South Korea,
+Spain,
+Sri Lanka,
+Sweden,
+Switzerland,
+Tajikistan,
+Tanzania,
+Thailand,
+Togo,
+Trinidad and Tobago,
+Tunisia,
+Turkey,
+Uganda,
+Ukraine,
+United Arab Emirates,
+United Kingdom,
+United States,
+Uruguay,
+Uzbekistan,
+Venezuela,
+Vietnam,
+Yemen,
+Zambia,
 Zimbabwe
+
 
