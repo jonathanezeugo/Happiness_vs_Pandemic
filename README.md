@@ -37,7 +37,7 @@
 	in the menu, by clicking on the circles contained in the map. The user can also zoom in and out with + and - buttons 
 	on the left side of the visualization.
 	
-(<a href="https://gyazo.com/e3e450f144ecc65d7bc90e746bf6162b"><img src="https://i.gyazo.com/e3e450f144ecc65d7bc90e746bf6162b.gif" alt="Image from Gyazo" width="1052.5"/></a>
+<a href="https://gyazo.com/e3e450f144ecc65d7bc90e746bf6162b"><img src="https://i.gyazo.com/e3e450f144ecc65d7bc90e746bf6162b.gif" alt="Image from Gyazo" width="500"/></a>
 	
 	2. Dropdown menu with Demographic Information table: We've included a dropdown menu with 136 UN countries, with an empty table.
 	The user can select any country in the dropdown, which will then populate the demographics table with the following information
