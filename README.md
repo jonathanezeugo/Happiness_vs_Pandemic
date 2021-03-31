@@ -1,6 +1,6 @@
 Project 2: Happiness vs Pandemic
 
-![smiley face](https://files.slack.com/files-pri/T01D5AMJJHX-F01T2972Z60/smiley-bg.png)
+![smiley face](smiley.png)
 
 Members: Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
 
