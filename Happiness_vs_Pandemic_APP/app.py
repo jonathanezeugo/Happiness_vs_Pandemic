@@ -35,7 +35,7 @@ def countries():
 #-----------------------------------------------------
 @app.route("/demographics")
 def demographics():
-    results=engine.execute("""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
+    results=engine.execute("""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, 
     from un_govt as u
     join world_happiness as w
     on (u.id=w.country_id)""").fetchall()
@@ -43,12 +43,12 @@ def demographics():
 
     for result in results:
         country_data={}
-        country_data["id"] = result[0]
-        country_data["country_name"] = result[1]
-        country_data["type_of_government"] = result[2]
-        country_data["population"] = result[3]
-        country_data["world_region"] = result[4]
-        country_data["gdp"] = result[5]
+        country_data["ID: "] = result[0]
+        country_data["Country Name: "] = result[1]
+        country_data["Type of Government: "] = result[2]
+        country_data["Population: "] = result[3]
+        country_data["World Region: "] = result[4]
+
         
         demographics.append(country_data)
 
@@ -92,7 +92,7 @@ def map():
 
 @app.route("/demographics/<country>")
 def country_demographic(country):
-    results=engine.execute(f"""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
+    results=engine.execute(f"""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region
     from un_govt as u
     join world_happiness as w
     on (u.id=w.country_id) where u.country= '{country}'""").fetchall()
@@ -100,12 +100,12 @@ def country_demographic(country):
 
     for result in results:
         country_data={}
-        country_data["id"] = result[0]
-        country_data["country_name"] = result[1]
-        country_data["type_of_government"] = result[2]
-        country_data["population"] = result[3]
-        country_data["world_region"] = result[4]
-        country_data["gdp"] = result[5]
+        country_data["ID"] = result[0]
+        country_data["Country Name"] = result[1]
+        country_data["Type of Government"] = result[2]
+        country_data["Population"] = result[3]
+        country_data["World Region"] = result[4]
+
         
 
 
