@@ -1,0 +1,45 @@
+.iframeContainer {
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+  }
+  
+  /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    /* Padding bottom by footer height */
+    padding-top: 75px;
+    padding-bottom: 80px;
+    background-image: url("./images/background.JPG");
+    background-color: rgb(238, 237, 237); /* Used if image not available */
+    background-repeat: no-repeat; 
+  }
+  
+  .article {
+    padding-top: 25px;
+  }
+  
+  p {
+    font-size: 140%;
+  }
+  
+  h1 {
+    color: black;
+    font-family: 'algerian';
+    font-weight: bold;
+    font-size: 300%
+  }
+  
+  h2 {
+    color: black;
+    font-family: 'sans-serif';
+    font-weight: bold;
+    font-style: italic; 
+  }
+  
+  #footer {
+    font-size: 85%;
+  }
