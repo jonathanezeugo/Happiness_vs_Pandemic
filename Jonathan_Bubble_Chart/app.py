@@ -8,8 +8,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from config import password
 
-# engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/Happiness_db')
-
 # engine = create_engine(f'postgresql://postgres:{password}@http://happinesscoviddb.cy7ekxurfwul.us-east-2.rds.amazonaws.com:5432/Happiness_db')
 
 engine = create_engine(f'postgresql://postgres:{password}@http://happinesscoviddb.cy7ekxurfwul.us-east-2.rds.amazonaws.com:5432/postgres')
