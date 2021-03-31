@@ -3,9 +3,9 @@ Project 2: Happiness vs Pandemic
 Members:Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
 
 Links to Data Used:
-[data/un_govt.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/un_govt.csv)
-[data/world_happiness.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/world_happiness.csv)
-[data/world_covid_data.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/world_covid_data.csv)
+[data/un_govt.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/un_govt.csv);
+[data/world_happiness.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/world_happiness.csv);
+[data/world_covid_data.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/0364f71e33ed2828100394c87af5b1b81d71e3ee/data/world_covid_data.csv);
 [data/gov_response.csv](https://github.com/Kpearson72/Happiness_vs_Pandemic/blob/a74fdc9c144068fa66067497a61e4fb087c35096/data/gov_response.csv)
 
 ![Countries That Made the Cut](https://i.gyazo.com/d087eced613c645b3592952be3c6dc22.png)
