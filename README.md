@@ -37,15 +37,22 @@
 	in the menu, by clicking on the circles contained in the map. The user can also zoom in and out with + and - buttons 
 	on the left side of the visualization.
 	
+<a href="https://gyazo.com/e3e450f144ecc65d7bc90e746bf6162b"><img src="https://i.gyazo.com/e3e450f144ecc65d7bc90e746bf6162b.gif" alt="Image from Gyazo" width="500"/></a>
+	
 	2. Dropdown menu with Demographic Information table: We've included a dropdown menu with 136 UN countries, with an empty table.
 	The user can select any country in the dropdown, which will then populate the demographics table with the following information
 	about the selected country: country name/id, type of government, population (as of 2020), and the respective world region.
+	
+<a href="https://gyazo.com/9e98b8b260f13ba4384a86cd23c2b78b"><img src="https://i.gyazo.com/9e98b8b260f13ba4384a86cd23c2b78b.gif" alt="Image from Gyazo" width="500"/></a>
 	
 	3. Bubble Chart: The third interactive visualization is a bubble chart showing each country, along with their 
 	respective Covid-19 data. The user can first choose between the 2 options below the chart: covid cases,
 	and covid deaths. After clicking on one of these, the user can hover their pointer over each circle to see
 	the following data about the corresponding country: country name, happiness score,
 	covid cases (as of 2020) and covid deaths (as of 2020).
+	
+<a href="https://gyazo.com/a60610d91b4609b72395c2d6bc88fbd4"><img src="https://i.gyazo.com/a60610d91b4609b72395c2d6bc88fbd4.gif" alt="Image from Gyazo" width="500"/></a>
+
 	
 	
 ![Countries That Made the Cut](https://i.gyazo.com/d087eced613c645b3592952be3c6dc22.png)
