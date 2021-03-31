@@ -117,7 +117,7 @@ def country_demographic(country):
 
 @app.route("/happiness_vs_covid")
 def happiness_vs_covid():
-    results = engine.execute("""select u.country, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
+    results = engine.execute("""select u.country, u.population_2020, w.happiness_score,  u.latitude, u.longitude,sum(c.new_deaths) as "total_new_deaths", sum(c.new_cases) as "total_new_cases"
     from un_govt as u
 	inner join world_happiness as w
 	on (u.id=w.country_id)
@@ -130,11 +130,12 @@ def happiness_vs_covid():
     for result in results:
         covid_happiness={}
         covid_happiness["country"] = result[0]
-        covid_happiness["happiness_score"] = result[1]
-        covid_happiness["latitude"] = result[2]
-        covid_happiness["longitude"] = result[3]
-        covid_happiness["total_new_deaths"] = result[4]
-        covid_happiness["total_new_cases"] = result[5]
+        covid_happiness["population_2020"] = result[1]
+        covid_happiness["happiness_score"] = result[2]
+        covid_happiness["latitude"] = result[3]
+        covid_happiness["longitude"] = result[4]
+        covid_happiness["total_new_deaths"] = result[5]
+        covid_happiness["total_new_cases"] = result[6]
 
 
         happiness_vs_covid.append(covid_happiness)

@@ -95,7 +95,7 @@ d3.json("/happiness_vs_covid").then((happinessDataSample) => {
 
     for (var i = 0; i < happinessDataSample.length; i++) {
             
-            var happinessRating = (happinessDataSample[i]['happiness_score'])*10
+            var happinessRating = parseFloat((happinessDataSample[i]['happiness_score'])).toFixed(2)
             console.log(happinessRating);
             console.log(happinessDataSample[i].latitude);
             
@@ -104,23 +104,26 @@ d3.json("/happiness_vs_covid").then((happinessDataSample) => {
                 color: "green",
                 weight: 3,
                 innerfill: true,
-                radius: happyMarkerSize(happinessRating)
-            }).bindPopup(`<h1> ${happinessDataSample[i].latitude}, ${happinessDataSample[i].longitude}</h1><br>
+                radius: happyMarkerSize((happinessRating)*10)
+            // }).bindPopup(`<h1> ${happinessDataSample[i].latitude}, ${happinessDataSample[i].longitude}</h1><br>
+            // <h1> Happiness Score: ${happinessRating}</h1>`)
+            // .addTo(score)
+            }).bindPopup(`<h1> </h1><br>
             <h1> Happiness Score: ${happinessRating}</h1>`)
             .addTo(score)
         }
 
     for (var i = 0; i < happinessDataSample.length; i++) {
         
-        var numDeaths = (happinessDataSample[i]['total_new_deaths'])/3.5
+        var numDeaths = Math.round(happinessDataSample[i]['total_new_deaths'])
 
         L.circle([happinessDataSample[i].latitude, happinessDataSample[i].longitude], {
             stroke: true,
             color: "black",
             height: 50,
             weight: 0,
-            radius: deathMarkerSize(numDeaths)
-        }).bindPopup(`<h1> ${happinessDataSample[i].latitude}, ${happinessDataSample[i].longitude}</h1><br>
+            radius: deathMarkerSize((numDeaths)/3.5)
+        }).bindPopup(`<h1> ${happinessDataSample[i].country}</h1><br>
         <h1> Number of Deaths: ${numDeaths}</h1>`)
         .addTo(deaths)
         }
