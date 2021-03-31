@@ -1,8 +1,8 @@
 # Project 2: Happiness vs Pandemic
 
-<img src="https://i.gyazo.com/bbe4ea726d4c1901854c9f001d4dc49c.jpg" width="100" height="100"/>
-
-![smiley face](https://i.gyazo.com/bbe4ea726d4c1901854c9f001d4dc49c.jpg | 100x25)
+<p align="center">
+<img src="https://i.gyazo.com/bbe4ea726d4c1901854c9f001d4dc49c.jpg" width="250" height="250"/>
+</p>
 
 ## Members: Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
 
