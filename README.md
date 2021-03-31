@@ -1,6 +1,6 @@
 Project 2: Happiness vs Pandemic
 
-![smiley face](https://ricehoudatapt-nyy6067.slack.com/files/U01CSR76JJE/F01T2972Z60/smiley-bg.png)
+![smiley face](smiley-bg.png)
 
 Members: Karen Pearson, Tamey Washington, Jonathan Ezeugo, Cade Culver
 
@@ -39,10 +39,11 @@ Breakdown of Interactive Visualizations:
 	The user can select any country in the dropdown, which will then populate the demographics table with the following information
 	about the selected country: country name/id, type of government, population (as of 2020), and the respective world region.
 	
-	3. Bubble Chart: The third interactive visualization is a bubble chart showing each country, along with their respective Covid-19 data.
-	The user can first choose between the 2 options below the chart: covid cases, and covid deaths. After clicking on one of these,
-	the user can hover their pointer over each circle to see the following data about the corresponding country: country name,
-	happiness score, covid cases (as of 2020) and covid deaths (as of 2020).
+	3. Bubble Chart: The third interactive visualization is a bubble chart showing each country, along with their 
+	respective Covid-19 data. The user can first choose between the 2 options below the chart: covid cases,
+	and covid deaths. After clicking on one of these, the user can hover their pointer over each circle to see
+	the following data about the corresponding country: country name, happiness score,
+	covid cases (as of 2020) and covid deaths (as of 2020).
 	
 	
 ![Countries That Made the Cut](https://i.gyazo.com/d087eced613c645b3592952be3c6dc22.png)
