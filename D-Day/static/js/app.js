@@ -20,7 +20,11 @@ function makeChart(country){
 
             let happScore = []
             sampleArr.forEach(d => happScore.push(d.happiness_score))
+
+            let health_life_expectancy = []
+            sampleArr.forEach(d => health_life_expectancy.push(d.healthy_life_expectancy))
             //console.log(happScore)
+            
         // }
         // Horizontal bar chart trace for top 10 OTUs
         let lineTrace = [{
@@ -34,8 +38,8 @@ function makeChart(country){
         let lineLayout = {
             xaxis: {title: 'New COVID Cases'},
             yaxis: {title: 'New COVID Deaths'},
-            title: `Top 10 Cases Data for: ${data[0].country}`, font: {size: 12},
-            width: 400,
+            title: `Top 10 Cases Data for ${data[0].country}`, font: {size: 12},
+            width: 700,
             height: 650,
         }
         // Plot bar chart
@@ -48,13 +52,13 @@ function makeChart(country){
             text: sampleArr.country,
             type: 'scatter',
             mode: 'markers',
-            marker: {size: newDeaths, color: happScore}
+            marker: {size: newDeaths, color: newCases}
         }];
         
         let bublLayout = {
-            xaxis: {title: 'New Cases'},
-            yaxis: {title: 'New Deaths'},
-            title: `Happiness Vs Covid New Cases and New Deaths for: ${data[0].country}`,
+            xaxis: {title: 'New COVID Cases'},
+            yaxis: {title: 'New COVID Deaths'},
+            title: `Happiness Vs Covid New Cases and New Deaths for ${data[0].country}`,
             hovermode: 'closest',
             height: 600,
             width: 1000

@@ -1,6 +1,6 @@
 .aText {
     font-family: 'sans-serif';
-    font-size: 16px;
+    font-size: 20px;
     text-anchor: middle;
   }
   
@@ -9,11 +9,12 @@
     fill: #000;
     transition: fill 0.3s ease-out;
     text-anchor: middle;
+    font-family: 'sans-serif';
   }
   
   .inactive {
     font-weight: lighter;
-    fill: #7a7878;
+    fill: #a3a0a0;
     transition: fill 0.3s ease-out;
     text-anchor: middle;
   }
@@ -29,18 +30,18 @@
   }
   
   .d3-tip {
-    padding: 6px;
-    width: 185px;
-    height: 70px;
-    font-size: 12px;
+    padding: 7px;
+    width: 250px;
+    height: 100px;
+    font-size: 15px;
     line-height: 1;
     line-height: 1.5em;
     color: black;
     text-align: center;
     text-transform: capitalize;
-    background: rgb(216, 210, 210);
-    border-radius: 4px;
-    border: 4px;
+    background: rgb(250, 211, 211);
+    border-radius: 15px;
+    border: 10px;
   
   }
   

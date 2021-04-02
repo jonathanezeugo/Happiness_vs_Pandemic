@@ -6,14 +6,17 @@ from flask import Flask, jsonify, render_template, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
+from flask_cors import CORS
 from config import password
+
+# engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/Happiness_db')
 
 # engine = create_engine(f'postgresql://postgres:{password}@http://happinesscoviddb.cy7ekxurfwul.us-east-2.rds.amazonaws.com:5432/Happiness_db')
 
-engine = create_engine(f'postgresql://postgres:{password}@http://happinesscoviddb.cy7ekxurfwul.us-east-2.rds.amazonaws.com:5432/postgres')
+engine = create_engine(f'postgresql://postgres:{password}@happinesscoviddb.cy7ekxurfwul.us-east-2.rds.amazonaws.com:5432/postgres')
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/")
 def home():
@@ -28,9 +31,9 @@ def countries():
     return jsonify(country)
 
 # add route for world_covid_data bellybutton-type graphs
-@app.route()
-def bellybutton():
-    return render_template('bellybutton.html')
+# @app.route()
+# def bellybutton():
+#     return render_template('bellybutton.html')
 
 @app.route("/demographics")
 def demographics():
@@ -58,11 +61,12 @@ def demographics():
 
 @app.route("/demographics/<country>")
 def country_demographic(country):
+    print("country", country)
     results=engine.execute(f"""select  u.id, u.country, u.constitutional_form, u.population_2020, w.world_region, w.gdp_per_capita
     from un_govt as u
     join world_happiness as w
     on (u.id=w.country_id) where u.country= '{country}'""").fetchall()
-
+    print("country 1", country)
     demographics=[]
     for result in results:
         country_data={}
@@ -110,28 +114,28 @@ def happiness_vs_covid():
 @app.route("/happiness_vs_covid_charts/<country>")
 def happiness_vs_covid_charts(country):
     
-    results = engine.execute(f"""select u.id, u.country, w.new_cases, w.new_deaths, wh.happiness_score
-    from un_govt as u
-	inner join world_covid_data as w
-	on (u.id=w.country_id) inner join world_happiness as wh
-	on (w.country_id = wh.country_id) where u.country = '{country}' 
-	group by u.id, w.new_cases, w.new_deaths, wh.happiness_score
-	order by w.new_cases desc, w.new_deaths desc
-	limit 10; """).fetchall()
+    myresults = engine.execute(f""" select u.id, u.country, w.new_cases, w.new_deaths, wh.happiness_score
+from un_govt as u
+inner join world_covid_data as w
+on (u.id=w.country_id) inner join world_happiness as wh
+on (w.country_id = wh.country_id) where u.country = '{country}'
+group by u.id, w.new_cases, w.new_deaths, wh.happiness_score
+order by w.new_cases desc
+limit 10 """).fetchall()
     
-    hap_vs_covid_charts=[]
-    for result in results:
-        select_country={}
-        select_country["id"] = result[0]
-        select_country["country"] = result[1]
-        select_country["new_cases"] = result[2]
-        select_country["new_deaths"] = result[3]
-        select_country["happiness_score"] = result[4]
+    hap_covid_charts = []
+    for myresult in myresults:
+        choice_country = {}
+        choice_country["id"] = myresult[0]
+        choice_country["country"] = myresult[1]
+        choice_country["new_cases"] = myresult[2]
+        choice_country["new_deaths"] = myresult[3]
+        choice_country["happiness_score"] = myresult[4]
         
-        hap_vs_covid_charts.append(select_country)
+        hap_covid_charts.append(choice_country)
     
-    results.to_json('static/js/hap2covid.json')
-    return jsonify(results)
+    return jsonify(hap_covid_charts)
+    hap_vs_covid_charts.to_json('static/js/hap2covid.json')
     
 @app.route("/government_response/<country>")
 def government_response(country):

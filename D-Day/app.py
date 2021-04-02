@@ -114,12 +114,12 @@ def happiness_vs_covid():
 @app.route("/happiness_vs_covid_charts/<country>")
 def happiness_vs_covid_charts(country):
     
-    myresults = engine.execute(f""" select u.id, u.country, w.new_cases, w.new_deaths, wh.happiness_score
+    myresults = engine.execute(f""" select u.id, u.country, w.new_cases, w.new_deaths, wh.happiness_score, wh.healthy_life_expectancy
 from un_govt as u
 inner join world_covid_data as w
 on (u.id=w.country_id) inner join world_happiness as wh
 on (w.country_id = wh.country_id) where u.country = '{country}'
-group by u.id, w.new_cases, w.new_deaths, wh.happiness_score
+group by u.id, w.new_cases, w.new_deaths, wh.happiness_score, wh.healthy_life_expectancy
 order by w.new_cases desc
 limit 10 """).fetchall()
     
@@ -131,6 +131,7 @@ limit 10 """).fetchall()
         choice_country["new_cases"] = myresult[2]
         choice_country["new_deaths"] = myresult[3]
         choice_country["happiness_score"] = myresult[4]
+        choice_country["healthy_life_expectancy"] = myresult[5]
         
         hap_covid_charts.append(choice_country)
     

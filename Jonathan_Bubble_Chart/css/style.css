@@ -13,7 +13,7 @@
     /* Padding bottom by footer height */
     padding-top: 75px;
     padding-bottom: 80px;
-    background-image: url("./images/background.JPG");
+    background-image: url("/images/background.jpg");
     background-color: rgb(238, 237, 237); /* Used if image not available */
     background-repeat: no-repeat; 
   }
@@ -28,7 +28,7 @@
   
   h1 {
     color: black;
-    font-family: 'algerian';
+    font-family: 'algerian'; /*sans-serif for algerian*/
     font-weight: bold;
     font-size: 300%
   }
